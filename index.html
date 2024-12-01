@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Frontend Mentor | Contact Form</title>
+  <link rel="shortcut icon" href="./assets/images/favicon-32x32.png" type="image/x-icon">
+  <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+  <main>
+    <!-- Contact Form -->
+    <form action="" method="post">
+      <h1 class="form-title"> Contact Us</h1>
+      <div class="name-group">
+        <div class="form-field">
+          <label for="first-name" class="star">First Name</label>
+          <input type="text" id="first-name">
+          <span class="error-message">This field is required</span>
+        </div>
+
+        <div class="form-field">
+          <label for="last-name" class="star">Last Name</label>
+          <input type="text" id="last-name">
+          <span class="error-message">This field is required</span>
+        </div>
+      </div>
+
+      <label for="email" class="star">Email Address</label>
+      <input type="email" name="" id="email" class="user-email">
+      <span class="error-message">
+        Please enter a valid email address
+      </span>
+
+      <label for="" class="star">Query Type</label>
+      <div class="radio-group">
+        <label for="general-enquiry" class="radio-label">
+          <input type="radio" name="query-type" id="general-enquiry"><span class="custom-radio"><img
+              src="./assets/images/icon-radio-selected.svg" alt=""></span> General Enquiry
+        </label>
+
+        <label for="support-request" class="radio-label">
+          <input type="radio" name="query-type" id="support-request">
+          <span class="custom-radio"><img src="./assets/images/icon-radio-selected.svg" alt=""></span> Support Request
+        </label>
+      </div>
+      <span class="error-message">Please select a query type</span>
+
+      <div class="message-div">
+        <label for="message" class="star">Message</label>
+        <textarea name="" id="message" cols="50" rows="5" aria-label="Message input"></textarea>
+        <span class="error-message">
+          This field is required
+        </span>
+      </div>
+
+      <label for="consent" class="consent star">
+        <input type="checkbox" name="" id="consent">
+        <span class="custom-checkbox"><img src="./assets/images/icon-checkbox-check.svg" alt=""></span> I consent to
+        being contacted by the
+        team</label>
+      <span class="error-message">To submit this form, please consent to being contacted</span>
+
+      <button type="submit" class="submit-btn">Submit</button>
+    </form>
+    <!-- Attribution Section -->
+    <div class="attribution">
+      Challenge by <a href="https://www.frontendmentor.io/challenges/contact-form--G-hYlqKJj" target="_blank"
+        rel="noopener noreferrer">Frontend Mentor</a>.
+      Coded by <a href="https://www.github.com/Mayen007">Mayen007</a>.
+    </div>
+  </main>
+  <!-- Confirmation Message -->
+  <div class="confirmation-message" id="confirmation-message">
+    <h4><img src="./assets/images/icon-success-check.svg" alt=""> Message Sent!</h4>
+    <p class="description">
+      Thanks for completing the form. We'll be in touch soon!
+    </p>
+  </div>
+  <script src="./script.js"></script>
+</body>
+
+</html>

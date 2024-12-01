@@ -1,0 +1,312 @@
+:root {
+  /* Primary colors */
+  --green-200: hsl(148, 38%, 91%);
+  --green-600: hsl(169, 82%, 27%);
+  --red: hsl(0, 66%, 54%);
+
+  /* Neutral colors */
+  --white: hsl(0, 0%, 100%);
+  --grey-500: hsl(186, 15%, 59%);
+  --grey-900: hsl(187, 24%, 22%);
+
+  --labels-font-size: 16px;
+}
+
+@font-face {
+  font-family: 'karla-Regular';
+  src: url(./assets/fonts/static/Karla-Regular.ttf) format('truetype');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'karla-Bold';
+  src: url(./assets/fonts/static/Karla-Bold.ttf) format('truetype');
+  font-weight: 700;
+  font-style: normal;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'karla-Regular', sans-serif;
+  background-color: var(--green-200);
+  color: var(--grey-900);
+  font-size: 16px;
+}
+
+main {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 90%;
+  max-width: 600px;
+}
+
+form {
+  background-color: var(--white);
+  color: var(--grey-900);
+  border-radius: 10px;
+  padding: 2rem 1.4rem;
+  z-index: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.form-title {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  margin-top: 0.5rem;
+  font-family: 'Karla-Bold', sans-serif;
+}
+
+.name-group label {
+  display: block;
+  width: 100%;
+}
+
+.name-group input,
+.user-email,
+textarea {
+  padding: 0.6rem 0.7rem;
+  border-radius: 5px;
+  border: 1px solid var(--grey-500);
+  cursor: pointer;
+  transition: border-color 0.3s;
+  outline: none;
+  width: 100%;
+  margin-top: 0.5rem;
+  margin-bottom: 0.4rem;
+  resize: none;
+}
+
+.name-group input:focus,
+.user-email:focus,
+textarea:focus {
+  outline: none;
+  border: 2px solid var(--green-600);
+}
+
+/* Container for the name group */
+.name-group {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.5rem;
+  margin-bottom: 1.1rem;
+}
+
+/* Styling for each form field */
+.form-field {
+  display: flex;
+  flex-direction: column;
+}
+
+label {
+  display: block;
+  font-size: var(--labels-font-size);
+  color: var(--grey-500);
+  margin-top: 1.2rem;
+}
+
+.star::after {
+  content: '*';
+  color: var(--green-600);
+  margin-left: 0.4rem;
+  opacity: 0.8;
+}
+
+.radio-group {
+  margin-bottom: 1.1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+}
+
+.radio-label {
+  font-size: var(--labels);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  border: 1px solid var(--grey-500);
+  padding: 0.7rem 0.7rem;
+  border-radius: 8px;
+  cursor: pointer;
+  width: 50%;
+}
+
+.radio-label:focus-within {
+  border: 1px solid var(--green-600);
+  background-color: var(--green-200);
+  color: var(--grey-900);
+}
+
+.submit-btn {
+  width: 100%;
+  margin-top: 1.7rem;
+  padding: 0.6rem;
+  background-color: var(--green-600);
+  color: var(--white);
+  font-size: 1rem;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  letter-spacing: 1.4px;
+}
+
+.submit-btn:hover {
+  background-color: hsl(169, 83%, 21%);
+  color: var(--white);
+}
+
+.confirmation-message {
+  display: none;
+  color: var(--white);
+  background-color: var(--grey-900);
+  font-size: 1.1rem;
+  margin-top: 0.4rem;
+  z-index: 1000;
+  padding: 1rem 1rem;
+  max-width: 80%;
+  width: 400px;
+  border-radius: 10px;
+  margin: auto;
+  margin-top: 1rem;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  transition: all 0.5s;
+}
+
+.consent {
+  display: flex;
+  gap: 0.7rem;
+  align-items: center;
+  margin-top: 1rem;
+}
+
+.confirmation-message h4 {
+  align-items: center;
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 0.8rem;
+  font-family: 'karla-Bold', sans-serif;
+  font-size: 1rem;
+}
+
+.confirmation-message p {
+  font-size: 0.87rem;
+  color: var(--grey-500);
+  font-family: 'karla-Regular', sans-serif;
+}
+
+.attribution {
+  font-size: 11px;
+  text-align: center;
+  margin-top: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.attribution a {
+  color: var(--green-600);
+  text-decoration: none;
+}
+
+input[type="radio"],
+input[type="checkbox"] {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+}
+
+/* Custom radio styling */
+.custom-radio {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 16px;
+  height: 16px;
+  border: 1px solid;
+  border-radius: 50%;
+  margin-right: 10px;
+  transition: background-color 0.3s, border-color 0.3s;
+}
+
+input[type="radio"]:checked+.custom-radio img {
+  display: block;
+  width: 16px;
+  height: 16px;
+}
+
+/* Hide unchecked radio icons */
+.custom-radio img {
+  display: none;
+}
+
+/* Custom checkbox styling */
+.custom-checkbox {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 14px;
+  height: 14px;
+  border: 1px solid var(--grey-500);
+  transition: background-color 0.3s, border-color 0.3s;
+  color: var(--grey-500);
+  cursor: pointer;
+}
+
+input[type="checkbox"]:checked+.custom-checkbox img {
+  display: block;
+  width: 14px;
+  height: 14px;
+}
+
+/* Hide unchecked checkbox icons */
+.custom-checkbox img {
+  display: none;
+}
+
+/* Error message styling */
+.error-message {
+  font-size: 12px;
+  color: var(--red);
+  margin-top: 0.4rem;
+  display: none;
+}
+
+/* Adjustments for smaller screens */
+@media (max-width: 768px) {
+  .name-group {
+    grid-template-columns: 1fr;
+  }
+
+  form {
+    padding: 2rem 1rem;
+  }
+
+  .radio-group {
+    justify-content: space-between;
+    flex-direction: column;
+  }
+
+  .confirmation-message {
+    width: 90%;
+  }
+
+  .radio-label {
+    width: 100%;
+  }
+}
+
+/* Error state for input fields */
+.input-error {
+  border: 1px solid var(--red);
+}
